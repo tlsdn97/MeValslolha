@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\todd\Desktop\24.08.01 Sw\과제\SW_Battle\Battle\Battle\main.cpp(7,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\todd\Desktop\24.08.01 Sw\과제\SW_Battle\Battle\Battle\main.cpp(58,34): warning C4390: ';': 제어된 빈 문이 있습니다. 이 문이 필요합니까?
+  Battle.vcxproj -> C:\Users\todd\Desktop\24.08.01 Sw\과제\SW_Battle\Battle\Debug\Battle.exe
