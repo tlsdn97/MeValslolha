@@ -23,9 +23,14 @@ private:
 	float _speed = 5.f;
 	float _angle = 0.0f;
 
+	float _delay = 0.0f;
+	float _timer = 2.0f;
 
 	shared_ptr<class Barrel> _barrel;
-	shared_ptr<class Ball> _ball;
+
+
+	int _ballPoolCount = 30;
+	vector<shared_ptr<class Ball>> _balls;
 
 };
 

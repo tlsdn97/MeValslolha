@@ -2,8 +2,8 @@
 #include "Ball.h"
 
 Ball::Ball()
-
 {
+	_circleCollider = make_shared<CircleCollider>(Vector2D(), 10);
 }
 
 Ball::~Ball()
@@ -11,11 +11,34 @@ Ball::~Ball()
 }
 
 void Ball::Update()
-{
-	_ball->Update();
+{ 
+	if (_isActive == false) return;
+
+		// if(½Ã°£ÀÌ Áö³µ´Ù)
+		// SetActive(false)
+	
+		// if(¹Ù´Ú¿¡ ºÎµ÷Çû´Ù)
+		// SetActive(false)
+
+	_circleCollider->center += _dir * _speed;
+	_circleCollider->center.y += _fallingspeed;
+	
+	_fallingspeed += _G;
+
+	_circleCollider->Update();
+
 }
 
 void Ball::Render(HDC hdc)
 {
-	_ball->Render(hdc);
+	if (_isActive == false) return;
+
+	_circleCollider->Render(hdc);
 }
+
+void Ball::Erase()
+{
+	IsActive.erase
+}
+
+

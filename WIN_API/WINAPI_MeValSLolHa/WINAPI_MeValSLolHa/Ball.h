@@ -6,18 +6,29 @@ public:
 	Ball();
 	~Ball();
 
-	void UpdateBody(Vector2D bodyCenter) { _ball->_end = bodyCenter; }
-
 	void Update();
-	void Render(HDC hdc	);dd
+	void Render(HDC hdc	);
 
-	
+	void SetPos(Vector2D pos) { _circleCollider->center = pos; }
+	void SetDir(Vector2D dir) { dir.Normalize(); _dir = dir; }
+	void SetSpeed(float speed) { _speed = speed; }
+
+	void Erase();
+
+	void SetActive(bool value) { _fallingspeed = 0.0f; _isActive = value; }
+	bool IsActive() { return _isActive; }
+
 
 private:
+	shared_ptr<CircleCollider> _circleCollider;
 
-	shared_ptr<CircleCollider> _ball;
-	float _speed = 5.f;
-	float _angle = 0.0f;
+	Vector2D _dir = Vector2D(1, 0);
+	float _speed = 3.0f;
+	
+	bool _isActive = false;
+	float _fallingspeed = 0.0f;
+	float _G = 1;
+	
 
 };
 

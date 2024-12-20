@@ -11,6 +11,12 @@ public:
 
 	void UpdateBody(Vector2D bodyCenter) { _line->_start = bodyCenter; }
 	void SetDir(Vector2D dir) { _dir = dir; }
+	Vector2D GetDir() { return _dir; }
+	Vector2D GetMuzzle() { return _line->_end; }
+	float BarrelLength() { return _barrellength; }
+	
+	
+
 
 
 private:
@@ -18,6 +24,7 @@ private:
 	float _barrellength = 150;
 
 	Vector2D _dir = Vector2D(1,0);
+	
 
 };
 
